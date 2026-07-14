@@ -1,0 +1,263 @@
+/* ---------- Reset ---------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #fff8fa;
+  --text: #444;
+  --pink: #d8a4b4;
+  --gold: #d5b37d;
+  --white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+
+  color: var(--text);
+
+  font-family: Pretendard, sans-serif;
+
+  overflow-x: hidden;
+}
+
+.hero {
+  position: relative;
+
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+.hero__image {
+  position: absolute;
+
+  inset: 0;
+
+  background-image: url("../images/hero.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  animation: heroZoom 22s ease-in-out infinite alternate;
+}
+
+.hero__gradient {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.35)),
+    radial-gradient(circle at top, rgba(255, 220, 230, 0.45), transparent 55%);
+}
+
+.hero__content {
+  position: relative;
+
+  z-index: 10;
+
+  height: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-direction: column;
+
+  color: white;
+
+  text-align: center;
+}
+
+.hero__subtitle {
+  letter-spacing: 10px;
+
+  text-transform: uppercase;
+
+  font-size: 14px;
+}
+
+.hero__title {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+
+  margin: 40px 0;
+}
+
+.hero__name {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(48px, 8vw, 92px);
+
+  font-weight: 400;
+
+  letter-spacing: 5px;
+}
+
+.hero__ampersand {
+  color: #ffd8e6;
+
+  font-size: 56px;
+
+  font-family: "Cormorant Garamond", serif;
+}
+
+.hero__date {
+  letter-spacing: 4px;
+
+  font-size: 15px;
+}
+
+.hero__scroll {
+  position: absolute;
+
+  bottom: 35px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 20;
+
+  color: white;
+}
+
+.hero__scroll span {
+  display: block;
+
+  width: 1px;
+
+  height: 75px;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  margin: auto;
+
+  animation: scrollLine 2s infinite;
+}
+
+.hero__scroll p {
+  margin-top: 12px;
+
+  letter-spacing: 4px;
+
+  font-size: 11px;
+}
+
+/* ---------- Intro Placeholder ---------- */
+
+.section {
+  max-width: 1100px;
+
+  margin: auto;
+
+  padding: 140px 30px;
+}
+
+.section h2 {
+  text-align: center;
+
+  color: var(--pink);
+
+  font-family: "Cormorant Garamond";
+
+  font-size: 60px;
+}
+
+/* ---------- Hero Animation ---------- */
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes scrollLine {
+  0% {
+    transform: scaleY(0);
+
+    transform-origin: top;
+  }
+
+  50% {
+    transform: scaleY(1);
+
+    transform-origin: top;
+  }
+
+  51% {
+    transform-origin: bottom;
+  }
+
+  100% {
+    transform: scaleY(0);
+
+    transform-origin: bottom;
+  }
+}
+
+/* ---------- Text Animation ---------- */
+
+.reveal {
+  opacity: 0;
+
+  transform: translateY(35px);
+
+  animation: reveal 0.9s forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+.delay-2 {
+  animation-delay: 0.6s;
+}
+.delay-3 {
+  animation-delay: 1s;
+}
+.delay-4 {
+  animation-delay: 1.4s;
+}
+.delay-5 {
+  animation-delay: 1.8s;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__name {
+    font-size: 56px;
+  }
+
+  .hero__ampersand {
+    font-size: 42px;
+  }
+
+  .hero__subtitle {
+    letter-spacing: 6px;
+  }
+}
