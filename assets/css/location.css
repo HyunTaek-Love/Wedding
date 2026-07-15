@@ -1,0 +1,130 @@
+/* ==========================================================
+   LOCATION
+========================================================== */
+
+#location {
+  padding: 140px 24px;
+  background: #ffffff;
+}
+
+.location {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.location__subtitle {
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 5px;
+  color: var(--color-primary-dark);
+  margin-bottom: 16px;
+}
+
+.location__title {
+  text-align: center;
+  font-family: var(--font-title);
+  font-size: clamp(42px, 6vw, 58px);
+  color: var(--color-primary-dark);
+  margin-bottom: 18px;
+}
+
+.location__description {
+  text-align: center;
+  color: var(--color-subtext);
+  line-height: 1.8;
+  margin-bottom: 60px;
+}
+
+.location__card {
+  background: #fff;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.location__map {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #f7f7f7;
+}
+
+.location__map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.location__content {
+  padding: 40px;
+}
+
+.location__venue {
+  font-size: 28px;
+  font-family: var(--font-title);
+  color: var(--color-primary-dark);
+  margin-bottom: 10px;
+}
+
+.location__address {
+  color: var(--color-subtext);
+  line-height: 1.9;
+  margin-bottom: 30px;
+}
+
+.location__buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.location__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 52px;
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.location__button:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+.location__info {
+  display: grid;
+  gap: 24px;
+}
+
+.location__item h4 {
+  color: var(--color-primary-dark);
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.location__item p {
+  color: var(--color-subtext);
+  line-height: 1.9;
+}
+
+@media (max-width: 768px) {
+  #location {
+    padding: 100px 20px;
+  }
+
+  .location__content {
+    padding: 28px;
+  }
+
+  .location__buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .location__venue {
+    font-size: 24px;
+  }
+}

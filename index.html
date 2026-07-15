@@ -284,7 +284,39 @@
 
     <!-- Calendar -->
 
-    <section id="calendar"></section>
+    <section id="calendar">
+      <div class="calendar container">
+        <p class="calendar__subtitle fade-up">WEDDING DAY</p>
+
+        <h2 class="calendar__title fade-up delay-1">우리의 결혼식</h2>
+
+        <p class="calendar__date fade-up delay-2">
+          2027년 2월 20일 토요일 오후 4시 50분
+        </p>
+
+        <div class="calendar__card fade-up delay-3">
+          <div class="calendar__header">
+            <h3 class="calendar__month">May 2027</h3>
+          </div>
+
+          <div class="calendar__week">
+            <div>일</div>
+            <div>월</div>
+            <div>화</div>
+            <div>수</div>
+            <div>목</div>
+            <div>금</div>
+            <div>토</div>
+          </div>
+
+          <div class="calendar__days" id="calendarDays"></div>
+
+          <p class="calendar__notice" id="calendarNotice">
+            소중한 날을 기다리고 있습니다.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <!-- D-Day -->
 
@@ -292,7 +324,93 @@
 
     <!-- Location -->
 
-    <section id="location"></section>
+    <section id="location">
+      <div class="location container">
+        <p class="location__subtitle fade-up">LOCATION</p>
+
+        <h2 class="location__title fade-up delay-1">오시는 길</h2>
+
+        <p class="location__description fade-up delay-2">
+          소중한 걸음으로 함께해 주시면
+          <br />
+          더없는 기쁨이 되겠습니다.
+        </p>
+
+        <div class="location__card fade-up delay-3">
+          <div class="location__map">
+            <iframe
+              title="Wedding Hall Map"
+              loading="lazy"
+              src="https://maps.google.com/maps?q=lotte%20hotel%20seoul&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            >
+            </iframe>
+          </div>
+
+          <div class="location__content">
+            <h3 class="location__venue">롯데호텔 서울 크리스탈볼룸</h3>
+
+            <p class="location__address">
+              서울특별시 중구 을지로 30
+              <br />
+              롯데호텔 서울 2층 크리스탈볼룸
+            </p>
+
+            <div class="location__buttons">
+              <button class="location__button" id="copyAddress">
+                📋 주소 복사
+              </button>
+
+              <a
+                class="location__button"
+                href="https://map.kakao.com"
+                target="_blank"
+                rel="noopener"
+              >
+                🗺 카카오맵
+              </a>
+
+              <a
+                class="location__button"
+                href="https://map.naver.com"
+                target="_blank"
+                rel="noopener"
+              >
+                🧭 네이버지도
+              </a>
+
+              <a
+                class="location__button"
+                href="https://tmap.life"
+                target="_blank"
+                rel="noopener"
+              >
+                🚗 TMAP
+              </a>
+            </div>
+
+            <div class="location__info">
+              <div class="location__item">
+                <h4>🚇 지하철</h4>
+
+                <p>2호선 을지로입구역 8번 출구 도보 1분</p>
+              </div>
+
+              <div class="location__item">
+                <h4>🚌 버스</h4>
+
+                <p>롯데백화점 · 을지로입구 정류장 하차</p>
+              </div>
+
+              <div class="location__item">
+                <h4>🚘 주차</h4>
+
+                <p>예식 참석 고객 3시간 무료 주차</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Parking -->
 
@@ -300,7 +418,105 @@
 
     <!-- Account -->
 
-    <section id="account"></section>
+    <section id="account">
+      <div class="account container">
+        <p class="account__subtitle fade-up">WEDDING GIFT</p>
+
+        <h2 class="account__title fade-up delay-1">마음 전하실 곳</h2>
+
+        <p class="account__description fade-up delay-2">
+          참석이 어려우신 분들을 위해
+          <br />
+          마음을 전하실 수 있는 계좌를 안내드립니다.
+        </p>
+
+        <div class="account__accordion">
+          <!-- Groom -->
+
+          <div class="account__item">
+            <button class="account__header">
+              <span>🤵 신랑측 계좌</span>
+
+              <span>+</span>
+            </button>
+
+            <div class="account__body">
+              <div class="account__content">
+                <div class="account__box">
+                  <div class="account__bank">
+                    <strong> 홍길동 </strong>
+
+                    <span> 국민은행 </span>
+
+                    <span class="account-number"> 123-456-789012 </span>
+                  </div>
+
+                  <button class="account__copy" data-account="123-456-789012">
+                    계좌번호 복사
+                  </button>
+                </div>
+
+                <div class="account__box">
+                  <div class="account__bank">
+                    <strong> 홍아버지 </strong>
+
+                    <span> 신한은행 </span>
+
+                    <span class="account-number"> 110-123-456789 </span>
+                  </div>
+
+                  <button class="account__copy" data-account="110-123-456789">
+                    계좌번호 복사
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bride -->
+
+          <div class="account__item">
+            <button class="account__header">
+              <span>👰 신부측 계좌</span>
+
+              <span>+</span>
+            </button>
+
+            <div class="account__body">
+              <div class="account__content">
+                <div class="account__box">
+                  <div class="account__bank">
+                    <strong> 김영희 </strong>
+
+                    <span> 하나은행 </span>
+
+                    <span class="account-number"> 222-333-444555 </span>
+                  </div>
+
+                  <button class="account__copy" data-account="222-333-444555">
+                    계좌번호 복사
+                  </button>
+                </div>
+
+                <div class="account__box">
+                  <div class="account__bank">
+                    <strong> 김아버지 </strong>
+
+                    <span> 우리은행 </span>
+
+                    <span class="account-number"> 1002-123-456789 </span>
+                  </div>
+
+                  <button class="account__copy" data-account="1002-123-456789">
+                    계좌번호 복사
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- RSVP -->
 
@@ -311,5 +527,24 @@
     <button id="musicButton"></button>
 
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/calendar.js"></script>
+    <script src="assets/js/location.js"></script>
+    <script src="assets/js/account.js"></script>
+
+    <div class="floating">
+      <button id="musicButton" class="floating__button" aria-label="배경음악">
+        🎵
+      </button>
+
+      <button id="topButton" class="floating__button" aria-label="맨 위로">
+        ↑
+      </button>
+    </div>
+
+    <audio id="bgm" loop>
+      <source src="assets/audio/bgm.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="assets/js/floating.js"></script>
   </body>
 </html>

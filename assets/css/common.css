@@ -81,3 +81,41 @@ section {
 .text-center {
   text-align: center;
 }
+
+/* ==========================================================
+   TOAST
+========================================================== */
+
+.toast {
+  position: fixed;
+
+  left: 50%;
+
+  bottom: 40px;
+
+  transform: translateX(-50%) translateY(30px);
+
+  background: rgba(40, 40, 40, 0.92);
+
+  color: #fff;
+
+  padding: 14px 22px;
+
+  border-radius: 999px;
+
+  font-size: 14px;
+
+  z-index: 99999;
+
+  opacity: 0;
+
+  transition: 0.3s;
+
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 1;
+
+  transform: translateX(-50%) translateY(0);
+}

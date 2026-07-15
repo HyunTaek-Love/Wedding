@@ -1,0 +1,97 @@
+/* ==========================================================
+   FLOATING BUTTONS
+========================================================== */
+
+.floating {
+  position: fixed;
+
+  right: 20px;
+
+  bottom: 24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
+  z-index: 9999;
+}
+
+.floating__button {
+  width: 58px;
+
+  height: 58px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 22px;
+
+  color: white;
+
+  background: linear-gradient(135deg, #f6b6c9, #df8fa9);
+
+  box-shadow: 0 12px 30px rgba(223, 143, 169, 0.35);
+
+  transition: 0.3s;
+}
+
+.floating__button:hover {
+  transform: translateY(-4px) scale(1.08);
+}
+
+.floating__button:active {
+  transform: scale(0.96);
+}
+
+.floating__button svg {
+  width: 24px;
+
+  height: 24px;
+}
+
+@media (max-width: 768px) {
+  .floating {
+    right: 16px;
+
+    bottom: 20px;
+  }
+
+  .floating__button {
+    width: 54px;
+
+    height: 54px;
+  }
+}
+
+/* ==========================================================
+   TOP BUTTON
+========================================================== */
+
+#topButton {
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+}
+
+#topButton:hover {
+  transform: translateY(-4px);
+}
+
+#musicButton.playing {
+  background: linear-gradient(135deg, #df8fa9, #c86f90);
+}
