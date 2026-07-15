@@ -1,0 +1,186 @@
+/* ==========================================================
+   INVITATION SECTION
+========================================================== */
+
+#invitation {
+  position: relative;
+  padding: 140px 24px;
+  background: linear-gradient(to bottom, #fff9fb 0%, #fffdfd 100%);
+  overflow: hidden;
+}
+
+#invitation::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: rgba(233, 194, 207, 0.18);
+  filter: blur(90px);
+  top: -180px;
+  left: -160px;
+}
+
+#invitation::after {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  filter: blur(100px);
+  bottom: -150px;
+  right: -120px;
+}
+
+.invitation {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  margin: auto;
+  text-align: center;
+}
+
+.invitation__icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  font-size: 30px;
+  color: var(--color-primary-dark);
+}
+
+.invitation__subtitle {
+  font-size: 14px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--color-primary-dark);
+  margin-bottom: 16px;
+}
+
+.invitation__title {
+  font-family: var(--font-title);
+  font-size: clamp(40px, 6vw, 58px);
+  color: var(--color-primary-dark);
+  font-weight: 500;
+  margin-bottom: 60px;
+}
+
+.invitation__message {
+  font-family: var(--font-korean);
+  font-size: 18px;
+  line-height: 2.3;
+  color: var(--color-text);
+}
+
+.invitation__message p {
+  margin-bottom: 24px;
+}
+
+.invitation__divider {
+  width: 1px;
+  height: 70px;
+  background: var(--color-primary);
+  margin: 60px auto;
+  opacity: 0.5;
+}
+
+.invitation__signature {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.invitation__family {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.invitation__family small {
+  font-size: 14px;
+  color: var(--color-subtext);
+  letter-spacing: 2px;
+}
+
+.invitation__family strong {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.invitation__family span {
+  font-size: 17px;
+  color: var(--color-primary-dark);
+}
+
+.invitation__flower {
+  position: absolute;
+  opacity: 0.08;
+  font-size: 120px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.invitation__flower--left {
+  left: -30px;
+  top: 120px;
+  transform: rotate(-20deg);
+}
+
+.invitation__flower--right {
+  right: -20px;
+  bottom: 100px;
+  transform: rotate(18deg);
+}
+
+@media (max-width: 768px) {
+  #invitation {
+    padding: 100px 24px;
+  }
+
+  .invitation__icon {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    margin-bottom: 28px;
+  }
+
+  .invitation__subtitle {
+    font-size: 12px;
+    letter-spacing: 4px;
+  }
+
+  .invitation__title {
+    font-size: 42px;
+    margin-bottom: 44px;
+  }
+
+  .invitation__message {
+    font-size: 16px;
+    line-height: 2.1;
+  }
+
+  .invitation__divider {
+    margin: 48px auto;
+  }
+
+  .invitation__signature {
+    gap: 28px;
+    flex-direction: column;
+  }
+
+  .invitation__family strong {
+    font-size: 18px;
+  }
+
+  .invitation__flower {
+    font-size: 90px;
+  }
+}

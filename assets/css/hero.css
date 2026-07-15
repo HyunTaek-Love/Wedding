@@ -1,0 +1,449 @@
+/* ===========================
+   HERO
+=========================== */
+
+.hero {
+  position: relative;
+
+  height: 100vh;
+
+  min-height: 680px;
+
+  overflow: hidden;
+}
+
+/* ------------------------- */
+
+.hero__background {
+  position: absolute;
+
+  inset: 0;
+
+  background-image: url("../images/hero.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  transform: scale(1);
+
+  animation: heroZoom 24s ease-in-out infinite alternate;
+}
+
+/* ------------------------- */
+
+.hero__overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.35)),
+    linear-gradient(rgba(245, 214, 223, 0.18), rgba(245, 214, 223, 0.1));
+}
+
+/* ------------------------- */
+
+.hero__content {
+  position: relative;
+
+  z-index: 10;
+
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  color: white;
+
+  text-align: center;
+}
+
+/* ------------------------- */
+
+.hero__eyebrow {
+  letter-spacing: 8px;
+
+  text-transform: uppercase;
+
+  font-size: 13px;
+
+  opacity: 0.92;
+
+  animation: fadeUp 0.8s 0.2s both;
+}
+
+/* ------------------------- */
+
+.hero__title {
+  display: flex;
+
+  flex-direction: column;
+
+  margin: 38px 0;
+
+  gap: 18px;
+}
+
+/* ------------------------- */
+
+.hero__line {
+  font-family: var(--font-title);
+
+  font-size: clamp(46px, 8vw, 88px);
+
+  font-weight: 400;
+
+  letter-spacing: 4px;
+}
+
+/* ------------------------- */
+
+.hero__and {
+  font-family: var(--font-title);
+
+  font-size: 52px;
+
+  color: #ffdbe6;
+}
+
+/* ------------------------- */
+
+.hero__date {
+  letter-spacing: 4px;
+
+  font-size: 15px;
+
+  animation: fadeUp 0.8s 1.2s both;
+}
+
+/* ------------------------- */
+
+.hero__dday {
+  margin-top: 18px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 10px 24px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  font-size: 15px;
+
+  animation: fadeUp 0.8s 1.5s both;
+}
+
+/* ------------------------- */
+
+.hero__scroll {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 42px;
+
+  transform: translateX(-50%);
+
+  z-index: 20;
+
+  color: white;
+
+  text-align: center;
+}
+
+.hero__scroll span {
+  display: block;
+
+  width: 1px;
+
+  height: 70px;
+
+  background: white;
+
+  margin: auto;
+
+  animation: scrollLine 2s infinite;
+}
+
+.hero__scroll p {
+  margin-top: 12px;
+
+  letter-spacing: 5px;
+
+  font-size: 11px;
+}
+
+/* ------------------------- */
+
+.hero__line--1 {
+  animation: fadeUp 0.8s 0.5s both;
+}
+
+.hero__line--2 {
+  animation: fadeUp 0.8s 0.8s both;
+}
+
+.hero__line--3 {
+  animation: fadeUp 0.8s 1.1s both;
+}
+
+/* ------------------------- */
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollLine {
+  0% {
+    transform: scaleY(0);
+
+    transform-origin: top;
+  }
+
+  50% {
+    transform: scaleY(1);
+
+    transform-origin: top;
+  }
+
+  51% {
+    transform-origin: bottom;
+  }
+
+  100% {
+    transform: scaleY(0);
+
+    transform-origin: bottom;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+  }
+
+  .hero__line {
+    font-size: 52px;
+  }
+
+  .hero__and {
+    font-size: 42px;
+  }
+
+  .hero__eyebrow {
+    letter-spacing: 5px;
+
+    font-size: 12px;
+  }
+
+  .hero__date {
+    font-size: 14px;
+  }
+}
+
+/* ===========================
+   Mouse Parallax
+=========================== */
+
+.hero__background {
+  transition: transform 0.25s ease;
+}
+
+/* ===========================
+   Scroll Cursor
+=========================== */
+
+.hero__scroll {
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.hero__scroll:hover {
+  transform: translateX(-50%) translateY(-6px);
+}
+
+/* ==========================================================
+   Light
+========================================================== */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -20%;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.18),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(255, 220, 235, 0.18),
+      transparent 35%
+    );
+
+  animation: lightMove 18s linear infinite;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+/* ==========================================================
+   Sakura
+========================================================== */
+
+.sakura {
+  position: absolute;
+
+  top: -60px;
+
+  width: 18px;
+
+  height: 14px;
+
+  background: #ffd6e5;
+
+  border-radius: 70% 30% 70% 30%;
+
+  filter: blur(0.2px);
+
+  transform: rotate(25deg);
+
+  animation: sakura linear infinite;
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+.sakura::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(255, 255, 255, 0.35);
+
+  border-radius: inherit;
+}
+
+/* ==========================================================
+   Music Button
+========================================================== */
+
+#musicButton {
+  position: fixed;
+
+  top: 20px;
+
+  right: 20px;
+
+  width: 52px;
+
+  height: 52px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  backdrop-filter: blur(14px);
+
+  color: white;
+
+  font-size: 22px;
+
+  z-index: 999;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  transition: 0.3s;
+}
+
+#musicButton::before {
+  content: "♫";
+}
+
+#musicButton:hover {
+  transform: scale(1.1);
+}
+
+/* ==========================================================
+   Animation
+========================================================== */
+
+@keyframes sakura {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(40px) translateY(25vh) rotate(120deg);
+  }
+
+  50% {
+    transform: translateX(-30px) translateY(55vh) rotate(220deg);
+  }
+
+  75% {
+    transform: translateX(50px) translateY(80vh) rotate(310deg);
+  }
+
+  100% {
+    transform: translateX(-40px) translateY(110vh) rotate(420deg);
+  }
+}
+
+@keyframes lightMove {
+  0% {
+    transform: translateX(-2%) translateY(-2%);
+  }
+
+  50% {
+    transform: translateX(2%) translateY(2%);
+  }
+
+  100% {
+    transform: translateX(-2%) translateY(-2%);
+  }
+}

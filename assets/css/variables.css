@@ -1,0 +1,45 @@
+:root {
+  /* Color */
+
+  --color-background: #fff9fb;
+
+  --color-surface: #ffffff;
+
+  --color-primary: #e9c2cf;
+
+  --color-primary-dark: #cb90a4;
+
+  --color-gold: #c8a66b;
+
+  --color-text: #4c4c4c;
+
+  --color-subtext: #7b7b7b;
+
+  --color-border: #f0dde4;
+
+  --color-white: #ffffff;
+
+  /* Font */
+
+  --font-title: "Cormorant Garamond", serif;
+
+  --font-body: "Pretendard", sans-serif;
+
+  --font-korean: "Noto Serif KR", serif;
+
+  /* Layout */
+
+  --section-width: 1080px;
+
+  --section-padding: 120px;
+
+  --radius: 24px;
+
+  /* Shadow */
+
+  --shadow-soft: 0 15px 40px rgba(0, 0, 0, 0.06);
+
+  /* Transition */
+
+  --transition: 0.35s ease;
+}

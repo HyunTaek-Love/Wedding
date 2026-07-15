@@ -1,0 +1,210 @@
+/* ==========================================================
+   SCROLL ANIMATION
+========================================================== */
+
+.fade-up,
+.fade-down,
+.fade-left,
+.fade-right,
+.zoom-in {
+  opacity: 0;
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+
+  will-change: opacity, transform;
+}
+
+.fade-up {
+  transform: translateY(50px);
+}
+
+.fade-down {
+  transform: translateY(-50px);
+}
+
+.fade-left {
+  transform: translateX(-50px);
+}
+
+.fade-right {
+  transform: translateX(50px);
+}
+
+.zoom-in {
+  transform: scale(0.9);
+}
+
+/* ==========================================================
+   ACTIVE
+========================================================== */
+
+.fade-up.show,
+.fade-down.show,
+.fade-left.show,
+.fade-right.show,
+.zoom-in.show {
+  opacity: 1;
+
+  transform: none;
+}
+
+/* ==========================================================
+   DELAY
+========================================================== */
+
+.delay-1 {
+  transition-delay: 0.15s;
+}
+
+.delay-2 {
+  transition-delay: 0.3s;
+}
+
+.delay-3 {
+  transition-delay: 0.45s;
+}
+
+.delay-4 {
+  transition-delay: 0.6s;
+}
+
+.delay-5 {
+  transition-delay: 0.75s;
+}
+
+/* ==========================================================
+   FLOAT
+========================================================== */
+
+.float {
+  animation: floating 4s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================
+   FADE
+========================================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade {
+  animation: fadeIn 1s ease both;
+}
+
+/* ==========================================================
+   SCALE
+========================================================== */
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+
+    transform: scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+.scale-up {
+  animation: scaleUp 0.8s ease both;
+}
+
+/* ==========================================================
+   TEXT REVEAL
+========================================================== */
+
+.reveal-text {
+  overflow: hidden;
+}
+
+.reveal-text > * {
+  display: inline-block;
+
+  transform: translateY(120%);
+
+  animation: revealText 0.9s ease forwards;
+}
+
+@keyframes revealText {
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================
+   SHIMMER
+========================================================== */
+
+.shimmer {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -150%;
+
+  width: 50%;
+
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 200%;
+  }
+}
+
+/* ==========================================================
+   REDUCE MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+
+    transition: none !important;
+  }
+}

@@ -5,46 +5,69 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>홍길동 ♥ 김영희</title>
+    <title>김정택 ♥ 김희현 결혼합니다.</title>
 
-    <meta property="og:title" content="홍길동 ♥ 김영희 결혼합니다." />
+    <meta name="description" content="김정택 ♥ 김희현 결혼식에 초대합니다." />
 
-    <meta property="og:description" content="2027.05.15 SAT PM 2:00" />
+    <!-- Open Graph -->
 
-    <meta property="og:image" content="assets/images/hero.jpg" />
+    <meta property="og:title" content="김정택 ♥ 김희현 결혼합니다." />
+
+    <meta property="og:description" content="2027.02.20 SAT PM 4:50" />
+
+    <meta property="og:image" content="assets/images/og-image.jpg" />
+
+    <meta property="og:type" content="website" />
+
+    <!-- Font -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Serif+KR:wght@200;300;400;500&family=Pretendard:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Serif+KR:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Pretendard -->
+
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+
+    <!-- CSS -->
 
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
+  <script src="assets/js/hero.js"></script>
+
   <body>
-    <header class="hero">
-      <div class="hero__image">
-        <div class="hero__gradient"></div>
-      </div>
+    <!-- Hero -->
+
+    <section id="hero" class="hero">
+      <div class="hero__background"></div>
 
       <div class="hero__overlay"></div>
 
-      <div class="hero__content">
-        <p class="hero__subtitle reveal delay-1">Wedding Invitation</p>
+      <div class="hero__content container">
+        <p class="hero__eyebrow">Wedding Invitation</p>
 
         <h1 class="hero__title">
-          <span class="hero__name reveal delay-2"> HONG GILDONG </span>
+          <span class="hero__line hero__line--1"> KIM JEONGTAEK </span>
 
-          <span class="hero__ampersand reveal delay-3"> & </span>
+          <span class="hero__and hero__line--2"> & </span>
 
-          <span class="hero__name reveal delay-4"> KIM YOUNGHEE </span>
+          <span class="hero__line hero__line--3"> KIM HEEHYUN </span>
         </h1>
 
-        <p class="hero__date reveal delay-5">MAY 15, 2027 SATURDAY</p>
+        <p class="hero__date hero__line--4">2027.02.20 SATURDAY</p>
+
+        <p class="hero__dday hero__line--5">D - 365</p>
       </div>
 
       <div class="hero__scroll">
@@ -52,21 +75,240 @@
 
         <p>SCROLL</p>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <section class="section">
-        <h2>Intro</h2>
-      </section>
+    <!-- Invitation -->
 
-      <section class="section">
-        <h2>Gallery</h2>
-      </section>
+    <section id="invitation">
+      <div class="invitation container fade-up">
+        <div class="invitation__flower invitation__flower--left">❀</div>
 
-      <section class="section">
-        <h2>Location</h2>
-      </section>
-    </main>
+        <div class="invitation__flower invitation__flower--right">❀</div>
+
+        <div class="invitation__icon">♥</div>
+
+        <p class="invitation__subtitle">INVITATION</p>
+
+        <h2 class="invitation__title">소중한 분들을 초대합니다</h2>
+
+        <div class="invitation__message">
+          <p>
+            서로 다른 길을 걸어온 두 사람이
+            <br />
+            같은 곳을 바라보며
+            <br />
+            평생을 함께 걷기로 약속했습니다.
+          </p>
+
+          <p>
+            새로운 시작의 순간에
+            <br />
+            귀한 걸음으로 함께하시어
+            <br />
+            축복해 주시면
+            <br />
+            더없는 기쁨으로 간직하겠습니다.
+          </p>
+        </div>
+
+        <div class="invitation__divider"></div>
+
+        <div class="invitation__signature">
+          <div class="invitation__family">
+            <small> 신랑측 </small>
+
+            <strong> 김정택 </strong>
+
+            <span> 홍아버지 · 김어머니 의 장남 </span>
+          </div>
+
+          <div class="invitation__family">
+            <small> 신부측 </small>
+
+            <strong> 김희현 </strong>
+
+            <span> 김아버지 · 이어머니 의 장녀 </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Couple -->
+
+    <section id="couple">
+      <div class="couple container">
+        <p class="couple__subtitle fade-up">BRIDE &amp; GROOM</p>
+
+        <h2 class="couple__title fade-up delay-1">
+          서로의 가장 소중한 사람이 되었습니다
+        </h2>
+
+        <div class="couple__grid">
+          <!-- Groom -->
+
+          <article class="couple__card fade-up delay-2">
+            <div class="couple__image">
+              <img src="assets/images/groom.jpg" alt="신랑 홍길동" />
+            </div>
+
+            <div class="couple__content">
+              <p class="couple__role">GROOM</p>
+
+              <h3 class="couple__name">홍길동</h3>
+
+              <p class="couple__parents">홍아버지 · 김어머니의 장남</p>
+
+              <div class="couple__actions">
+                <a
+                  class="couple__button"
+                  href="tel:010-1234-5678"
+                  aria-label="신랑에게 전화"
+                >
+                  📞
+                </a>
+
+                <a
+                  class="couple__button"
+                  href="sms:010-1234-5678"
+                  aria-label="신랑에게 문자"
+                >
+                  ✉️
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bride -->
+
+          <article class="couple__card fade-up delay-3">
+            <div class="couple__image">
+              <img src="assets/images/bride.jpg" alt="신부 김영희" />
+            </div>
+
+            <div class="couple__content">
+              <p class="couple__role">BRIDE</p>
+
+              <h3 class="couple__name">김영희</h3>
+
+              <p class="couple__parents">김아버지 · 이어머니의 장녀</p>
+
+              <div class="couple__actions">
+                <a
+                  class="couple__button"
+                  href="tel:010-8765-4321"
+                  aria-label="신부에게 전화"
+                >
+                  📞
+                </a>
+
+                <a
+                  class="couple__button"
+                  href="sms:010-8765-4321"
+                  aria-label="신부에게 문자"
+                >
+                  ✉️
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+
+    <section id="gallery">
+      <div class="gallery container">
+        <p class="gallery__subtitle fade-up">GALLERY</p>
+
+        <h2 class="gallery__title fade-up delay-1">
+          우리의 가장 아름다운 순간
+        </h2>
+
+        <div class="gallery__slider fade-up delay-2">
+          <div class="gallery__track">
+            <div class="gallery__slide">
+              <img src="assets/images/gallery/gallery01.jpg" alt="웨딩사진 1" />
+            </div>
+
+            <div class="gallery__slide">
+              <img src="assets/images/gallery/gallery02.jpg" alt="웨딩사진 2" />
+            </div>
+
+            <div class="gallery__slide">
+              <img src="assets/images/gallery/gallery03.jpg" alt="웨딩사진 3" />
+            </div>
+
+            <div class="gallery__slide">
+              <img src="assets/images/gallery/gallery04.jpg" alt="웨딩사진 4" />
+            </div>
+
+            <div class="gallery__slide">
+              <img src="assets/images/gallery/gallery05.jpg" alt="웨딩사진 5" />
+            </div>
+
+            <div class="gallery__slide">
+              <img src="assets/images/gallery/gallery06.jpg" alt="웨딩사진 6" />
+            </div>
+          </div>
+
+          <button
+            class="gallery__nav gallery__nav--prev"
+            aria-label="이전 사진"
+          >
+            ❮
+          </button>
+
+          <button
+            class="gallery__nav gallery__nav--next"
+            aria-label="다음 사진"
+          >
+            ❯
+          </button>
+        </div>
+
+        <div class="gallery__dots">
+          <button class="gallery__dot active"></button>
+          <button class="gallery__dot"></button>
+          <button class="gallery__dot"></button>
+          <button class="gallery__dot"></button>
+          <button class="gallery__dot"></button>
+          <button class="gallery__dot"></button>
+        </div>
+
+        <p class="gallery__caption fade-up delay-3">
+          Every moment with you becomes a precious memory.
+        </p>
+      </div>
+    </section>
+
+    <!-- Calendar -->
+
+    <section id="calendar"></section>
+
+    <!-- D-Day -->
+
+    <section id="countdown"></section>
+
+    <!-- Location -->
+
+    <section id="location"></section>
+
+    <!-- Parking -->
+
+    <section id="parking"></section>
+
+    <!-- Account -->
+
+    <section id="account"></section>
+
+    <!-- RSVP -->
+
+    <section id="rsvp"></section>
+
+    <!-- Music Button -->
+
+    <button id="musicButton"></button>
 
     <script src="assets/js/app.js"></script>
   </body>
