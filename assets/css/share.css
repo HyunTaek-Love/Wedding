@@ -1,0 +1,81 @@
+/* ==========================================================
+   SHARE
+========================================================== */
+
+#share {
+  padding: 120px 24px;
+  background: linear-gradient(180deg, #fff8fa 0%, #ffffff 100%);
+}
+
+.share {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.share__subtitle {
+  font-size: 14px;
+  letter-spacing: 5px;
+  color: var(--color-primary-dark);
+  margin-bottom: 16px;
+}
+
+.share__title {
+  font-family: var(--font-title);
+  font-size: clamp(40px, 6vw, 54px);
+  color: var(--color-primary-dark);
+  margin-bottom: 18px;
+}
+
+.share__description {
+  color: var(--color-subtext);
+  line-height: 1.9;
+  margin-bottom: 50px;
+}
+
+.share__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+}
+
+.share__button {
+  min-width: 220px;
+  height: 56px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.share__button:hover {
+  transform: translateY(-3px);
+}
+
+.share__button--kakao {
+  background: #fee500;
+  color: #191919;
+}
+
+.share__button--copy {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.share__button--share {
+  background: #444;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  #share {
+    padding: 100px 20px;
+  }
+
+  .share__button {
+    width: 100%;
+  }
+}

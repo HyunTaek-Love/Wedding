@@ -42,6 +42,72 @@
     <!-- CSS -->
 
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- ==========================================================
+     SEO
+========================================================== -->
+
+    <meta name="description" content="홍길동 ♥ 김영희 결혼식에 초대합니다." />
+
+    <meta name="keywords" content="모바일청첩장, 결혼식, Wedding Invitation" />
+
+    <meta name="author" content="홍길동 · 김영희" />
+
+    <meta name="theme-color" content="#f6b6c9" />
+
+    <!-- ==========================================================
+     Open Graph
+========================================================== -->
+
+    <meta property="og:type" content="website" />
+
+    <meta property="og:title" content="홍길동 ♥ 김영희 결혼합니다" />
+
+    <meta
+      property="og:description"
+      content="2027년 5월 15일 오후 2시 · 소중한 날 함께해 주세요."
+    />
+
+    <meta
+      property="og:image"
+      content="https://hyuntaek-love.github.io/assets/images/og.jpg"
+    />
+
+    <meta property="og:url" content="https://hyuntaek-love.github.io/" />
+
+    <meta property="og:site_name" content="Wedding Invitation" />
+
+    <meta property="og:locale" content="ko_KR" />
+
+    <!-- ==========================================================
+     Twitter Card
+========================================================== -->
+
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="twitter:title" content="홍길동 ♥ 김영희 결혼합니다" />
+
+    <meta name="twitter:description" content="2027년 5월 15일 오후 2시" />
+
+    <meta
+      name="twitter:image"
+      content="https://hyuntaek-love.github.io/assets/images/og.jpg"
+    />
+
+    <!-- ==========================================================
+     ICON
+========================================================== -->
+
+    <link rel="icon" href="assets/images/favicon.png" />
+
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+
+    <!-- ==========================================================
+     Kakao SDK
+========================================================== -->
+
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <link rel="stylesheet" href="assets/css/final.css" />
   </head>
 
   <script src="assets/js/hero.js"></script>
@@ -546,5 +612,102 @@
     </audio>
 
     <script src="assets/js/floating.js"></script>
+
+    <!-- ==========================================================
+     LIGHTBOX
+========================================================== -->
+
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox__close" id="lightboxClose" aria-label="닫기">
+        ✕
+      </button>
+
+      <button class="lightbox__prev" id="lightboxPrev" aria-label="이전 사진">
+        ❮
+      </button>
+
+      <img id="lightboxImage" src="" alt="Wedding Photo" />
+
+      <button class="lightbox__next" id="lightboxNext" aria-label="다음 사진">
+        ❯
+      </button>
+    </div>
+
+    <script src="assets/js/lightbox.js"></script>
+
+    <!-- SHARE -->
+    <section id="share">
+      <div class="share container">
+        <p class="share__subtitle fade-up">SHARE</p>
+
+        <h2 class="share__title fade-up delay-1">소중한 분들과 함께해주세요</h2>
+
+        <p class="share__description fade-up delay-2">
+          저희의 행복한 시작을
+          <br />
+          가족과 친구들에게도 전해주세요.
+        </p>
+
+        <div class="share__buttons fade-up delay-3">
+          <button
+            id="kakaoShareButton"
+            class="share__button share__button--kakao"
+          >
+            💬 카카오톡 공유
+          </button>
+
+          <button
+            id="webShareButton"
+            class="share__button share__button--share"
+          >
+            📤 공유하기
+          </button>
+
+          <button id="copyLinkButton" class="share__button share__button--copy">
+            🔗 링크 복사
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- ==========================================================
+     FINAL / FOOTER
+========================================================== -->
+
+    <section id="final">
+      <div class="final container">
+        <div class="final__content fade-up">
+          <p class="final__subtitle">THANK YOU</p>
+
+          <div class="final__flower">✿</div>
+
+          <h2 class="final__title">
+            저희의 새로운 시작에<br />
+            함께해 주세요
+          </h2>
+
+          <p class="final__message">
+            서로의 가장 좋은 친구가 되어<br />
+            평생을 함께하려 합니다.
+            <br /><br />
+            귀한 걸음으로 축복해 주시면<br />
+            감사한 마음 오래도록 간직하겠습니다.
+          </p>
+
+          <div class="final__names">
+            <span>홍길동</span>
+            <span class="final__heart">♥</span>
+            <span>김영희</span>
+          </div>
+
+          <p class="final__date">2027. 05. 15 SAT 2:00 PM</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>GILDONG & YOUNGHEE</p>
+
+      <span> © 2027 Wedding Invitation </span>
+    </footer>
   </body>
 </html>
