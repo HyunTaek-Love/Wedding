@@ -2,147 +2,179 @@
    GALLERY SLIDER
 ========================================================== */
 
-const track = document.querySelector(".gallery__track");
-const slides = document.querySelectorAll(".gallery__slide");
-const dots = document.querySelectorAll(".gallery__dot");
-const prev = document.querySelector(".gallery__nav--prev");
-const next = document.querySelector(".gallery__nav--next");
+document.addEventListener("DOMContentLoaded", () => {
+  const gallery = document.querySelector(".gallery__slider");
 
-let current = 0;
-let autoSlide;
+  if (!gallery) return;
 
-/* ==========================================================
-   UPDATE
-========================================================== */
+  const track = gallery.querySelector(".gallery__track");
+  const slides = gallery.querySelectorAll(".gallery__slide");
+  const prevButton = gallery.querySelector(".gallery__nav--prev");
+  const nextButton = gallery.querySelector(".gallery__nav--next");
 
-function updateGallery() {
-  track.style.transform = `translateX(-${current * 100}%)`;
+  const dots = document.querySelectorAll(".gallery__dot");
 
-  dots.forEach((dot, index) => {
-    dot.classList.toggle("active", index === current);
-  });
-}
+  if (!track || slides.length === 0) return;
 
-/* ==========================================================
-   NEXT
-========================================================== */
+  let current = 0;
+  let autoSlide = null;
 
-function nextSlide() {
-  current++;
+  /* ======================================================
+       UPDATE
+    ====================================================== */
 
-  if (current >= slides.length) {
-    current = 0;
+  function updateGallery() {
+    track.style.transform = `translate3d(-${current * 100}%, 0, 0)`;
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === current);
+    });
   }
 
-  updateGallery();
-}
+  /* ======================================================
+       NEXT
+    ====================================================== */
 
-/* ==========================================================
-   PREV
-========================================================== */
+  function nextSlide() {
+    current++;
 
-function prevSlide() {
-  current--;
-
-  if (current < 0) {
-    current = slides.length - 1;
-  }
-
-  updateGallery();
-}
-
-/* ==========================================================
-   BUTTON
-========================================================== */
-
-next?.addEventListener("click", () => {
-  nextSlide();
-
-  restartAuto();
-});
-
-prev?.addEventListener("click", () => {
-  prevSlide();
-
-  restartAuto();
-});
-
-/* ==========================================================
-   DOT
-========================================================== */
-
-dots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    current = index;
+    if (current >= slides.length) {
+      current = 0;
+    }
 
     updateGallery();
+  }
+
+  /* ======================================================
+       PREVIOUS
+    ====================================================== */
+
+  function prevSlide() {
+    current--;
+
+    if (current < 0) {
+      current = slides.length - 1;
+    }
+
+    updateGallery();
+  }
+
+  /* ======================================================
+       BUTTON
+    ====================================================== */
+
+  nextButton?.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    nextSlide();
 
     restartAuto();
   });
-});
 
-/* ==========================================================
-   AUTO
-========================================================== */
+  prevButton?.addEventListener("click", (event) => {
+    event.preventDefault();
 
-function startAuto() {
-  autoSlide = setInterval(() => {
-    nextSlide();
-  }, 4000);
-}
-
-function restartAuto() {
-  clearInterval(autoSlide);
-
-  startAuto();
-}
-
-startAuto();
-
-/* ==========================================================
-   TOUCH
-========================================================== */
-
-let startX = 0;
-
-let endX = 0;
-
-track?.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-});
-
-track?.addEventListener("touchmove", (e) => {
-  endX = e.touches[0].clientX;
-});
-
-track?.addEventListener("touchend", () => {
-  const diff = startX - endX;
-
-  if (Math.abs(diff) < 50) return;
-
-  if (diff > 0) {
-    nextSlide();
-  } else {
     prevSlide();
+
+    restartAuto();
+  });
+
+  /* ======================================================
+       DOT
+    ====================================================== */
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      current = index;
+
+      updateGallery();
+
+      restartAuto();
+    });
+  });
+
+  /* ======================================================
+       AUTO SLIDE
+    ====================================================== */
+
+  function startAuto() {
+    stopAuto();
+
+    autoSlide = setInterval(() => {
+      nextSlide();
+    }, 4000);
   }
 
-  restartAuto();
-});
+  function stopAuto() {
+    if (autoSlide) {
+      clearInterval(autoSlide);
 
-/* ==========================================================
-   PAUSE
-========================================================== */
+      autoSlide = null;
+    }
+  }
 
-track?.addEventListener("mouseenter", () => {
-  clearInterval(autoSlide);
-});
+  function restartAuto() {
+    stopAuto();
 
-track?.addEventListener("mouseleave", () => {
+    startAuto();
+  }
+
+  /* ======================================================
+       TOUCH SWIPE
+    ====================================================== */
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  track.addEventListener(
+    "touchstart",
+    (event) => {
+      touchStartX = event.changedTouches[0].screenX;
+
+      stopAuto();
+    },
+    { passive: true },
+  );
+
+  track.addEventListener(
+    "touchend",
+    (event) => {
+      touchEndX = event.changedTouches[0].screenX;
+
+      const distance = touchStartX - touchEndX;
+
+      if (Math.abs(distance) > 50) {
+        if (distance > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+
+      startAuto();
+    },
+    { passive: true },
+  );
+
+  /* ======================================================
+       MOUSE
+    ====================================================== */
+
+  gallery.addEventListener("mouseenter", () => {
+    stopAuto();
+  });
+
+  gallery.addEventListener("mouseleave", () => {
+    startAuto();
+  });
+
+  /* ======================================================
+       INIT
+    ====================================================== */
+
+  updateGallery();
+
   startAuto();
 });
-
-/* ==========================================================
-   INIT
-========================================================== */
-
-updateGallery();

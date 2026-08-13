@@ -16,3 +16,11 @@
 
 @import url("animation.css");
 @import url("responsive.css");
+
+/* ==========================================================
+   AUDIO
+========================================================== */
+
+#bgm {
+  display: none !important;
+}

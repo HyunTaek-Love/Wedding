@@ -147,3 +147,78 @@
     font-size: 16px;
   }
 }
+
+/* ==========================================================
+   CALENDAR DAY
+========================================================== */
+
+.calendar__day {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+
+  color: #555;
+  font-size: 14px;
+}
+
+.calendar__number {
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================
+   WEDDING DAY
+========================================================== */
+
+.calendar__day--wedding {
+  color: #d9829b;
+  font-weight: 600;
+}
+
+.calendar__day--wedding::before {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 38px;
+  height: 38px;
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid #e7a9ba;
+  border-radius: 50%;
+
+  background: #fff7fa;
+
+  z-index: 0;
+}
+
+.calendar__heart {
+  position: relative;
+
+  margin-top: 2px;
+
+  color: #df8fa9;
+
+  font-size: 9px;
+
+  line-height: 1;
+
+  z-index: 2;
+}
+
+/* ==========================================================
+   EMPTY DAY
+========================================================== */
+
+.calendar__day--empty {
+  visibility: hidden;
+}

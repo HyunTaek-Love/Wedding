@@ -13,6 +13,49 @@ const scroll = document.querySelector(".hero__scroll");
    D-Day
 ========================================================== */
 
+document.addEventListener("DOMContentLoaded", () => {
+  const ddayElement = document.getElementById("heroDday");
+
+  if (!ddayElement) return;
+
+  // 결혼식 날짜
+  const weddingDate = new Date(
+    2027,
+    1, // 2월 (JavaScript에서는 0부터 시작)
+    20,
+    16,
+    50,
+    0,
+  );
+
+  function updateDday() {
+    const now = new Date();
+
+    // 오늘 날짜만 비교하기 위해 시간 제거
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+    const wedding = new Date(
+      weddingDate.getFullYear(),
+      weddingDate.getMonth(),
+      weddingDate.getDate(),
+    );
+
+    const diffTime = wedding - today;
+
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    if (diffDays > 0) {
+      ddayElement.textContent = `D - ${diffDays}`;
+    } else if (diffDays === 0) {
+      ddayElement.textContent = "D - DAY";
+    } else {
+      ddayElement.textContent = `D + ${Math.abs(diffDays)}`;
+    }
+  }
+
+  updateDday();
+});
+
 function updateDday() {
   if (!dday) return;
 

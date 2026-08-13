@@ -95,3 +95,9 @@
 #musicButton.playing {
   background: linear-gradient(135deg, #df8fa9, #c86f90);
 }
+
+#musicButton::before,
+#musicButton::after {
+  content: none !important;
+  display: none !important;
+}

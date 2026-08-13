@@ -42,7 +42,8 @@
     <!-- CSS -->
 
     <link rel="stylesheet" href="assets/css/style.css" />
-
+    <link rel="stylesheet" href="assets/css/lightbox.css" />
+    <link rel="stylesheet" href="assets/css/floating.css" />
     <!-- ==========================================================
      SEO
 ========================================================== -->
@@ -110,8 +111,6 @@
     <link rel="stylesheet" href="assets/css/final.css" />
   </head>
 
-  <script src="assets/js/hero.js"></script>
-
   <body>
     <!-- Hero -->
 
@@ -133,7 +132,7 @@
 
         <p class="hero__date hero__line--4">2027.02.20 SATURDAY</p>
 
-        <p class="hero__dday hero__line--5">D - 365</p>
+        <p id="heroDday" class="hero__dday hero__line--5">D - DAY</p>
       </div>
 
       <div class="hero__scroll">
@@ -185,7 +184,7 @@
 
             <strong> 김정택 </strong>
 
-            <span> 김종길 · 서명월 의 장남 </span>
+            <span> 김종길 · 서명월 의 아들 </span>
           </div>
 
           <div class="invitation__family">
@@ -193,7 +192,7 @@
 
             <strong> 김희현 </strong>
 
-            <span> 김태주 · 박길여 의 장녀 </span>
+            <span> 김태주 · 박길영 의 딸 </span>
           </div>
         </div>
       </div>
@@ -214,7 +213,7 @@
 
           <article class="couple__card fade-up delay-2">
             <div class="couple__image">
-              <img src="assets/images/groom.jpg" alt="신랑 홍길동" />
+              <img src="assets/images/groom.jpg" alt="신랑 김정택" />
             </div>
 
             <div class="couple__content">
@@ -222,7 +221,7 @@
 
               <h3 class="couple__name">김정택</h3>
 
-              <p class="couple__parents">김종길 · 서명월의 장남</p>
+              <p class="couple__parents">김종길 · 서명월의 아들</p>
 
               <div class="couple__actions">
                 <a
@@ -256,7 +255,7 @@
 
               <h3 class="couple__name">김희현</h3>
 
-              <p class="couple__parents">김태주 · 박길여의 장녀</p>
+              <p class="couple__parents">김태주 · 박길영의 딸</p>
 
               <div class="couple__actions">
                 <a
@@ -663,11 +662,9 @@
 
     <section id="rsvp"></section>
 
-    <!-- Music Button -->
-
-    <button id="musicButton"></button>
-
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/hero.js"></script>
+    <script src="assets/js/gallery.js"></script>
     <script src="assets/js/calendar.js"></script>
     <script src="assets/js/location.js"></script>
     <script src="assets/js/account.js"></script>
@@ -701,7 +698,7 @@
         ❮
       </button>
 
-      <img id="lightboxImage" src="" alt="Wedding Photo" />
+      <img id="lightboxImage" alt="Wedding Photo" />
 
       <button class="lightbox__next" id="lightboxNext" aria-label="다음 사진">
         ❯
