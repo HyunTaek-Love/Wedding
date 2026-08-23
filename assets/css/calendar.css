@@ -222,3 +222,74 @@
 .calendar__day--empty {
   visibility: hidden;
 }
+
+/* ==========================================================
+   MOBILE CALENDAR FIX
+========================================================== */
+
+.calendar__week,
+.calendar__days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  width: 100%;
+}
+
+.calendar__week > div,
+.calendar__day {
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.calendar__day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.calendar__number {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .calendar__card {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .calendar__week {
+    margin-bottom: 4px;
+  }
+
+  .calendar__week > div {
+    font-size: 12px;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+
+  .calendar__day {
+    min-height: 44px;
+    font-size: 13px;
+  }
+
+  .calendar__number {
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+  .calendar__heart {
+    font-size: 8px;
+    margin-top: 3px;
+  }
+
+  .calendar__day--wedding::before {
+    width: 34px;
+    height: 34px;
+  }
+}
