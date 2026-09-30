@@ -82,9 +82,27 @@
     background: rgba(255, 255, 255, 0.9) !important;
 
     transform: none !important;
-    animation: none !important;
 
     flex: none !important;
+
+    animation: mobileScrollLine 1.8s ease-in-out infinite !important;
+  }
+
+  @keyframes mobileScrollLine {
+    0% {
+      opacity: 0.3;
+      transform: translateY(-6px) !important;
+    }
+
+    50% {
+      opacity: 1;
+      transform: translateY(4px) !important;
+    }
+
+    100% {
+      opacity: 0.3;
+      transform: translateY(-6px) !important;
+    }
   }
 
   /* SCROLL */
