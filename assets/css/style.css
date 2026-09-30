@@ -30,7 +30,7 @@
 ========================================================== */
 
 @media (max-width: 768px) {
-  /* 모바일에서 Hero 이미지 확대/줌 효과 제거 */
+  /* Hero 이미지 확대 방지 */
   .hero__background {
     transform: none !important;
     animation: none !important;
@@ -38,45 +38,75 @@
     will-change: auto !important;
   }
 
-  /* SCROLL 영역 고정 */
+  /* =========================
+     MOBILE SCROLL
+  ========================= */
+
   .hero__scroll {
-    position: absolute;
-    left: 50%;
-    bottom: 24px;
-    transform: translateX(-50%);
-    width: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 18px !important;
+    top: auto !important;
+
+    width: 70px !important;
+    height: auto !important;
+
+    transform: translateX(-50%) !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    gap: 7px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    z-index: 20 !important;
   }
 
   /* 세로선 */
   .hero__scroll span {
-    display: block;
-    width: 1px;
-    height: 36px;
-    min-width: 1px;
-    max-width: 1px;
-    margin: 0;
-    padding: 0;
-    background: rgba(255, 255, 255, 0.85);
-    transform: none;
-    animation: none;
-    flex-shrink: 0;
+    display: block !important;
+
+    width: 1px !important;
+    min-width: 1px !important;
+    max-width: 1px !important;
+
+    height: 28px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: rgba(255, 255, 255, 0.9) !important;
+
+    transform: none !important;
+    animation: none !important;
+
+    flex: none !important;
   }
 
-  /* SCROLL 글자 */
+  /* SCROLL */
   .hero__scroll p {
-    margin: 0;
-    padding: 0;
-    white-space: nowrap;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 1;
-    letter-spacing: 0.28em;
-    text-align: center;
+    display: block !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    white-space: nowrap !important;
+
+    font-family: "Cormorant Garamond", serif !important;
+    font-size: 10px !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+
+    letter-spacing: 0.25em !important;
+    text-align: center !important;
+
+    transform: none !important;
   }
 }
