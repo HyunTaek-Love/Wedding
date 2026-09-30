@@ -128,3 +128,94 @@
     transform: none !important;
   }
 }
+
+/* ==========================================================
+   KAKAO TALK / MOBILE VIEWPORT FIX
+========================================================== */
+
+@media (max-width: 768px) {
+  /* Hero 높이를 모바일 브라우저 viewport에 맞춤 */
+  .hero {
+    height: 100svh !important;
+    min-height: 100svh !important;
+  }
+
+  /* svh를 지원하지 않는 브라우저 대비 */
+  @supports not (height: 100svh) {
+    .hero {
+      height: 100vh !important;
+      min-height: 100vh !important;
+    }
+  }
+
+  /* SCROLL은 Hero의 가장 아래에 고정 */
+  .hero__scroll {
+    position: absolute !important;
+
+    top: auto !important;
+    bottom: 22px !important;
+
+    left: 50% !important;
+    right: auto !important;
+
+    width: 70px !important;
+    height: auto !important;
+
+    transform: translateX(-50%) !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+
+    z-index: 30 !important;
+  }
+
+  .hero__scroll span {
+    width: 1px !important;
+    min-width: 1px !important;
+    max-width: 1px !important;
+    height: 28px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    flex: none !important;
+
+    background: rgba(255, 255, 255, 0.9) !important;
+
+    animation: mobileScrollLine 1.8s ease-in-out infinite !important;
+  }
+
+  .hero__scroll p {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    white-space: nowrap !important;
+
+    font-size: 10px !important;
+    line-height: 1 !important;
+    letter-spacing: 0.25em !important;
+
+    transform: none !important;
+  }
+}
+
+@keyframes mobileScrollLine {
+  0% {
+    opacity: 0.3;
+    transform: translateY(-5px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+
+  100% {
+    opacity: 0.3;
+    transform: translateY(-5px);
+  }
+}
