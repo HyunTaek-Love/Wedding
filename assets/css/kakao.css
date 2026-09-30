@@ -1,0 +1,190 @@
+/* ==========================================================
+   KAKAO TALK MOBILE WEBVIEW
+   Wedding Invitation
+========================================================== */
+
+html.kakao-browser,
+html.kakao-browser body {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* ----------------------------------------------------------
+   HERO
+---------------------------------------------------------- */
+
+html.kakao-browser .hero {
+  position: relative !important;
+
+  width: 100% !important;
+  height: 100svh !important;
+  min-height: 100svh !important;
+
+  overflow: hidden !important;
+}
+
+/* ----------------------------------------------------------
+   HERO BACKGROUND
+---------------------------------------------------------- */
+
+html.kakao-browser .hero__background {
+  position: absolute !important;
+
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  transform: none !important;
+  animation: none !important;
+
+  background-position: center center !important;
+  background-size: cover !important;
+}
+
+/* ----------------------------------------------------------
+   HERO CONTENT
+---------------------------------------------------------- */
+
+html.kakao-browser .hero__content {
+  position: absolute !important;
+
+  top: 50% !important;
+  left: 50% !important;
+
+  width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 20px !important;
+
+  transform: translate(-50%, -50%) !important;
+
+  box-sizing: border-box !important;
+
+  z-index: 10 !important;
+}
+
+/* ----------------------------------------------------------
+   D-DAY
+---------------------------------------------------------- */
+
+html.kakao-browser .hero__dday {
+  position: relative !important;
+
+  margin: 28px auto 0 !important;
+
+  width: 158px !important;
+  height: 72px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  box-sizing: border-box !important;
+}
+
+/* ----------------------------------------------------------
+   SCROLL
+   기존 top / bottom / transform 전부 무시
+---------------------------------------------------------- */
+
+html.kakao-browser .hero__scroll {
+  position: absolute !important;
+
+  top: auto !important;
+  right: auto !important;
+  bottom: 24px !important;
+  left: 0 !important;
+
+  width: 100% !important;
+  height: 62px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  transform: none !important;
+
+  display: flex !important;
+
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+
+  box-sizing: border-box !important;
+
+  z-index: 100 !important;
+
+  pointer-events: none !important;
+}
+
+/* 세로선 */
+
+html.kakao-browser .hero__scroll span {
+  display: block !important;
+
+  position: relative !important;
+
+  width: 1px !important;
+  min-width: 1px !important;
+  max-width: 1px !important;
+
+  height: 30px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: rgba(255, 255, 255, 0.9) !important;
+
+  transform: translateY(0) !important;
+
+  flex: none !important;
+
+  animation: kakaoScrollLine 1.8s ease-in-out infinite !important;
+}
+
+/* SCROLL 글자 */
+
+html.kakao-browser .hero__scroll p {
+  display: block !important;
+
+  width: auto !important;
+  height: auto !important;
+
+  margin: 8px 0 0 !important;
+  padding: 0 !important;
+
+  white-space: nowrap !important;
+
+  font-size: 10px !important;
+  line-height: 1 !important;
+  letter-spacing: 0.28em !important;
+
+  text-align: center !important;
+
+  transform: none !important;
+}
+
+/* ----------------------------------------------------------
+   SCROLL ANIMATION
+---------------------------------------------------------- */
+
+@keyframes kakaoScrollLine {
+  0% {
+    opacity: 0.25;
+    transform: translateY(-5px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+
+  100% {
+    opacity: 0.25;
+    transform: translateY(-5px);
+  }
+}
