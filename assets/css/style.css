@@ -24,3 +24,59 @@
 #bgm {
   display: none !important;
 }
+
+/* ==========================================================
+   MOBILE HERO FIX
+========================================================== */
+
+@media (max-width: 768px) {
+  /* 모바일에서 Hero 이미지 확대/줌 효과 제거 */
+  .hero__background {
+    transform: none !important;
+    animation: none !important;
+    scale: 1 !important;
+    will-change: auto !important;
+  }
+
+  /* SCROLL 영역 고정 */
+  .hero__scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%);
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* 세로선 */
+  .hero__scroll span {
+    display: block;
+    width: 1px;
+    height: 36px;
+    min-width: 1px;
+    max-width: 1px;
+    margin: 0;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.85);
+    transform: none;
+    animation: none;
+    flex-shrink: 0;
+  }
+
+  /* SCROLL 글자 */
+  .hero__scroll p {
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.28em;
+    text-align: center;
+  }
+}
