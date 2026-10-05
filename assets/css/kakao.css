@@ -1,7 +1,11 @@
 /* ==========================================================
-   KAKAO TALK MOBILE WEBVIEW
+   KAKAO TALK
    Wedding Invitation
-========================================================== */
+   ========================================================== */
+
+/* ==========================================================
+   BASE
+   ========================================================== */
 
 html.kakao-browser,
 html.kakao-browser body {
@@ -9,200 +13,110 @@ html.kakao-browser body {
   min-width: 0;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+
+  overflow-x: clip;
 }
 
-/* ----------------------------------------------------------
-   HERO
----------------------------------------------------------- */
+/* ==========================================================
+   KAKAO SAFE AREA
+   ========================================================== */
 
-html.kakao-browser .hero {
-  position: relative !important;
-
-  width: 100% !important;
-  height: 100svh !important;
-  min-height: 100svh !important;
-
-  overflow: hidden !important;
-}
-
-/* ----------------------------------------------------------
-   HERO BACKGROUND
----------------------------------------------------------- */
-
-html.kakao-browser .hero__background {
-  position: absolute !important;
-
-  inset: 0 !important;
-
-  width: 100% !important;
-  height: 100% !important;
-
-  transform: none !important;
-  animation: none !important;
-
-  background-position: center center !important;
-  background-size: cover !important;
-}
-
-/* ----------------------------------------------------------
-   HERO CONTENT
----------------------------------------------------------- */
-
-html.kakao-browser .hero__content {
-  position: absolute !important;
-
-  top: 42% !important;
-  left: 50% !important;
-
-  width: 100% !important;
-
-  margin: 0 !important;
-  padding: 0 20px !important;
-
-  transform: translate(-50%, -50%) !important;
-
-  box-sizing: border-box !important;
-
-  z-index: 10 !important;
-}
-
-/* ----------------------------------------------------------
-   D-DAY
----------------------------------------------------------- */
-
-html.kakao-browser .hero__dday {
-  position: relative !important;
-
-  margin: 28px auto 0 !important;
-
-  width: 158px !important;
-  height: 72px !important;
-
-  display: flex !important;
-
-  align-items: center !important;
-  justify-content: center !important;
-
-  box-sizing: border-box !important;
-}
-
-/* ----------------------------------------------------------
-   SCROLL
-   기존 top / bottom / transform 전부 무시
----------------------------------------------------------- */
-
-html.kakao-browser .hero__scroll {
-  position: absolute !important;
-
-  top: auto !important;
-  right: auto !important;
-  bottom: 24px !important;
-  left: 0 !important;
-
-  width: 100% !important;
-  height: 62px !important;
-
-  margin: 0 !important;
-  padding: 0 !important;
-
-  transform: none !important;
-
-  display: flex !important;
-
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-
-  box-sizing: border-box !important;
-
-  z-index: 100 !important;
-
-  pointer-events: none !important;
-}
-
-/* 세로선 */
-
-html.kakao-browser .hero__scroll span {
-  display: block !important;
-
-  position: relative !important;
-
-  width: 1px !important;
-  min-width: 1px !important;
-  max-width: 1px !important;
-
-  height: 30px !important;
-
-  margin: 0 !important;
-  padding: 0 !important;
-
-  background: rgba(255, 255, 255, 0.9) !important;
-
-  transform: translateY(0) !important;
-
-  flex: none !important;
-
-  animation: kakaoScrollLine 1.8s ease-in-out infinite !important;
-}
-
-/* SCROLL 글자 */
-
-html.kakao-browser .hero__scroll p {
-  display: block !important;
-
-  width: auto !important;
-  height: auto !important;
-
-  margin: 8px 0 0 !important;
-  padding: 0 !important;
-
-  white-space: nowrap !important;
-
-  font-size: 10px !important;
-  line-height: 1 !important;
-  letter-spacing: 0.28em !important;
-
-  text-align: center !important;
-
-  transform: none !important;
-}
-
-/* ----------------------------------------------------------
-   SCROLL ANIMATION
----------------------------------------------------------- */
-
-@keyframes kakaoScrollLine {
-  0% {
-    opacity: 0.25;
-    transform: translateY(-5px);
-  }
-
-  50% {
-    opacity: 1;
-    transform: translateY(5px);
-  }
-
-  100% {
-    opacity: 0.25;
-    transform: translateY(-5px);
+@media (max-width: 767px) {
+  html.kakao-browser body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
   }
 }
 
 /* ==========================================================
-   KAKAO TALK - HERO NAME COMPACT
-========================================================== */
+   HERO
+   ========================================================== */
 
-html.kakao-browser .hero__line--1,
-html.kakao-browser .hero__line--3 {
-  font-size: 18px !important;
-  line-height: 1.15 !important;
-  letter-spacing: 0.14em !important;
+html.kakao-browser .hero {
+  width: 100%;
+  max-width: 100%;
 }
 
-/* 이름 사이의 &도 조금 작게 */
-html.kakao-browser .hero__line--2 {
-  font-size: 14px !important;
-  line-height: 1 !important;
-  margin: 4px 0 !important;
+/* ==========================================================
+   HERO BACKGROUND
+   ========================================================== */
+
+html.kakao-browser .hero__background {
+  transform: none !important;
+  animation: none !important;
+
+  background-size: cover;
+  background-position: center center;
+}
+
+/* ==========================================================
+   HERO CONTENT
+   ========================================================== */
+
+html.kakao-browser .hero__content {
+  width: 100%;
+  max-width: 100%;
+
+  padding-left: 18px;
+  padding-right: 18px;
+
+  transform: none;
+}
+
+/* ==========================================================
+   HERO TITLE
+   ========================================================== */
+
+html.kakao-browser .hero__line {
+  max-width: 100%;
+
+  white-space: nowrap;
+}
+
+html.kakao-browser .hero__and {
+  line-height: 1;
+}
+
+/* ==========================================================
+   D-DAY
+   ========================================================== */
+
+html.kakao-browser .hero__dday {
+  max-width: calc(100% - 20px);
+
+  white-space: nowrap;
+}
+
+/* ==========================================================
+   SMALL SCREEN
+   ========================================================== */
+
+@media (max-width: 359px) {
+  html.kakao-browser .hero__content {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  html.kakao-browser .hero__line {
+    font-size: clamp(32px, 10vw, 40px);
+    letter-spacing: 1px;
+  }
+
+  html.kakao-browser .hero__and {
+    font-size: 28px;
+  }
+}
+
+/* ==========================================================
+   STANDARD MOBILE
+   ========================================================== */
+
+@media (min-width: 360px) and (max-width: 430px) {
+  html.kakao-browser .hero__line {
+    font-size: clamp(38px, 10vw, 52px);
+  }
+
+  html.kakao-browser .hero__and {
+    font-size: clamp(30px, 7vw, 40px);
+  }
 }
