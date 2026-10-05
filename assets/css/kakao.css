@@ -188,3 +188,21 @@ html.kakao-browser .hero__scroll p {
     transform: translateY(-5px);
   }
 }
+
+/* ==========================================================
+   KAKAO TALK - HERO NAME COMPACT
+========================================================== */
+
+html.kakao-browser .hero__line--1,
+html.kakao-browser .hero__line--3 {
+  font-size: 18px !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0.14em !important;
+}
+
+/* 이름 사이의 &도 조금 작게 */
+html.kakao-browser .hero__line--2 {
+  font-size: 14px !important;
+  line-height: 1 !important;
+  margin: 4px 0 !important;
+}
