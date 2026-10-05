@@ -22,6 +22,16 @@
 
     <meta property="og:type" content="website" />
 
+    <script>
+      (function () {
+        const ua = navigator.userAgent || "";
+
+        if (/KAKAOTALK/i.test(ua)) {
+          document.documentElement.classList.add("kakao-browser");
+        }
+      })();
+    </script>
+
     <!-- Font -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />

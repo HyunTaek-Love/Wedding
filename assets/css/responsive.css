@@ -11,6 +11,9 @@ html {
   box-sizing: border-box;
   width: 100%;
   min-height: 100%;
+
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 *,
@@ -455,6 +458,20 @@ button {
 html.kakao-browser .hero {
   width: 100%;
   max-width: 100%;
+
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+html.kakao-browser .hero__content,
+html.kakao-browser .hero__title,
+html.kakao-browser .hero__line,
+html.kakao-browser .hero__and,
+html.kakao-browser .hero__eyebrow,
+html.kakao-browser .hero__date,
+html.kakao-browser .hero__dday {
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 html.kakao-browser .hero__background {
