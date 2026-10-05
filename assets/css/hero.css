@@ -441,3 +441,20 @@
     transform: translateX(-2%) translateY(-2%);
   }
 }
+
+/* ==========================================
+   HERO TEXT - INITIAL RENDER FIX
+========================================== */
+
+#hero .hero__content,
+#hero .hero__title,
+#hero .hero__line,
+#hero .hero__and {
+  transform: none !important;
+  scale: 1 !important;
+}
+
+#hero .hero__line {
+  opacity: 1 !important;
+  animation: none !important;
+}
