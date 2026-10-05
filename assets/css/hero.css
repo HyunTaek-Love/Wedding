@@ -462,3 +462,21 @@
   transform: none !important;
   scale: 1 !important;
 }
+
+/* ==========================================
+   HERO - FIX INITIAL SCALE JUMP
+========================================== */
+
+#hero .hero__title,
+#hero .hero__line,
+#hero .hero__and {
+  transform: none !important;
+  transform-origin: center center !important;
+}
+
+/* JS에서 transition을 걸더라도 크기 변화가 발생하지 않도록 */
+#hero .hero__title,
+#hero .hero__line,
+#hero .hero__and {
+  scale: 1 !important;
+}

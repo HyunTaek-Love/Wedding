@@ -2,7 +2,7 @@
    Wedding Hero
 ========================================================== */
 
-const weddingDate = new Date("2027-05-15T14:00:00");
+const weddingDate = new Date("2027-02-20T16:50:00");
 
 const hero = document.querySelector(".hero");
 const background = document.querySelector(".hero__background");
