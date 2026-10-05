@@ -188,18 +188,12 @@
   font-size: 11px;
 }
 
-/* ------------------------- */
-
-.hero__line--1 {
-  animation: fadeUp 0.8s 0.5s both;
-}
-
-.hero__line--2 {
-  animation: fadeUp 0.8s 0.8s both;
-}
-
+.hero__line--1,
+.hero__line--2,
 .hero__line--3 {
-  animation: fadeUp 0.8s 1.1s both;
+  animation: none;
+  opacity: 1;
+  transform: none;
 }
 
 /* ------------------------- */
@@ -446,37 +440,4 @@
   100% {
     transform: translateX(-2%) translateY(-2%);
   }
-}
-
-/* =================================
-   HERO TEXT - DISABLE SCALE ANIMATION
-================================= */
-
-.hero__line--1,
-.hero__line--2,
-.hero__line--3,
-.hero__line--4,
-.hero__line--5,
-.hero__and {
-  animation: none !important;
-  transform: none !important;
-  scale: 1 !important;
-}
-
-/* ==========================================
-   HERO - FIX INITIAL SCALE JUMP
-========================================== */
-
-#hero .hero__title,
-#hero .hero__line,
-#hero .hero__and {
-  transform: none !important;
-  transform-origin: center center !important;
-}
-
-/* JS에서 transition을 걸더라도 크기 변화가 발생하지 않도록 */
-#hero .hero__title,
-#hero .hero__line,
-#hero .hero__and {
-  scale: 1 !important;
 }
