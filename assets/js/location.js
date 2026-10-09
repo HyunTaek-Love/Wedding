@@ -4,7 +4,7 @@
 
 const copyButton = document.getElementById("copyAddress");
 
-const address = "서울특별시 중구 을지로 30 롯데호텔 서울 2층 크리스탈볼룸";
+const address = "인천 부평구 체육관로 60 삼산월드컨벤션 웨딩홀";
 
 copyButton?.addEventListener("click", async () => {
   try {
