@@ -3,7 +3,7 @@
 ========================================================== */
 
 #account {
-  padding: 140px 24px;
+  padding: 100px 24px 40px;
   background: #fff7fa;
 }
 
@@ -120,9 +120,10 @@
   background: var(--color-primary-dark);
 }
 
+/* 모바일 */
 @media (max-width: 768px) {
   #account {
-    padding: 100px 20px;
+    padding: 72px 20px 28px;
   }
 
   .account__header {

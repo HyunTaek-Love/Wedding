@@ -89,19 +89,10 @@ scroll?.addEventListener("click", () => {
 /* ==========================================================
    Mouse Parallax
 ========================================================== */
-
-hero?.addEventListener("mousemove", (e) => {
-  const x = (e.clientX / window.innerWidth - 0.5) * 25;
-
-  const y = (e.clientY / window.innerHeight - 0.5) * 25;
-
-  background.style.transform = `translate(${x}px,${y}px) scale(1.08)`;
-});
-
-hero?.addEventListener("mouseleave", () => {
-  background.style.transform = "translate(0,0) scale(1.05)";
-});
-
+// 배경 사진에 마우스 이동 및 확대 효과를 적용하지 않음
+if (background) {
+  background.style.transform = "none";
+}
 /* ==========================================================
    Sakura
 ========================================================== */

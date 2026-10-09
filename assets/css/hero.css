@@ -16,18 +16,13 @@
 
 .hero__background {
   position: absolute;
-
   inset: 0;
-
   background-image: url("../images/hero.jpg");
-
   background-size: cover;
-
   background-position: center;
-
-  transform: scale(1);
-
-  animation: heroZoom 24s ease-in-out infinite alternate;
+  transform: none;
+  animation: none;
+  transition: none;
 }
 
 /* ------------------------- */
@@ -197,16 +192,6 @@
 }
 
 /* ------------------------- */
-
-@keyframes heroZoom {
-  from {
-    transform: scale(1);
-  }
-
-  to {
-    transform: scale(1.08);
-  }
-}
 
 @keyframes fadeUp {
   from {
