@@ -133,3 +133,72 @@
     margin-bottom: 50px;
   }
 }
+
+/* 썸네일 목록 */
+.gallery__thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+  padding: 5px 2px 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery__thumbnails::-webkit-scrollbar {
+  display: none;
+}
+
+/* 개별 썸네일 */
+.gallery__thumbnail {
+  position: relative;
+  flex: 0 0 68px;
+  width: 68px;
+  height: 78px;
+  padding: 3px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  opacity: 0.65;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    opacity 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.gallery__thumbnail img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.gallery__thumbnail.active {
+  border-color: #bd8796;
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(120, 70, 85, 0.12);
+}
+
+.gallery__thumbnail:focus-visible {
+  outline: 2px solid #bd8796;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .gallery__thumbnails {
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .gallery__thumbnail {
+    flex-basis: 58px;
+    width: 58px;
+    height: 68px;
+  }
+}
