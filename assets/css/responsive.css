@@ -498,3 +498,35 @@ html.kakao-browser .hero__scroll {
     animation: none !important;
   }
 }
+
+/* 모든 스크롤 등장 애니메이션 비활성화 */
+.fade-up,
+.fade-down,
+.fade-left,
+.fade-right,
+.zoom-in,
+.scale-up,
+.fade,
+.reveal-text > * {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+  visibility: visible !important;
+}
+
+/* 계좌 섹션의 하단 여백 축소 */
+#account {
+  padding-top: 60px !important;
+  padding-bottom: 24px !important;
+}
+
+/* 내용이 없는 빈 섹션의 공간 제거 */
+#parking,
+#rsvp {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
