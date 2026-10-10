@@ -12,16 +12,28 @@ let playing = false;
    MUSIC
 ========================================================== */
 
+function updateMusicButton() {
+  if (!musicButton || !bgm) return;
+
+  const isPlaying = !bgm.paused;
+
+  musicButton.classList.toggle("is-playing", isPlaying);
+  musicButton.setAttribute(
+    "aria-label",
+    isPlaying ? "배경음악 정지" : "배경음악 재생",
+  );
+
+  playing = isPlaying;
+}
+
 async function playMusic() {
   if (!bgm) return;
 
   try {
     await bgm.play();
-
-    playing = true;
-
-    musicButton.textContent = "🔊";
+    updateMusicButton();
   } catch (e) {
+    updateMusicButton();
     console.log("Autoplay blocked.");
   }
 }
@@ -30,36 +42,36 @@ function pauseMusic() {
   if (!bgm) return;
 
   bgm.pause();
-
-  playing = false;
-
-  musicButton.textContent = "🎵";
+  updateMusicButton();
 }
 
 musicButton?.addEventListener("click", () => {
-  if (playing) {
+  if (bgm && !bgm.paused) {
     pauseMusic();
   } else {
     playMusic();
   }
 });
 
+/* 실제 오디오 상태와 파형 동기화 */
+bgm?.addEventListener("play", updateMusicButton);
+bgm?.addEventListener("pause", updateMusicButton);
+bgm?.addEventListener("ended", updateMusicButton);
+
 /* ==========================================================
    FIRST USER INTERACTION
 ========================================================== */
 
 function firstInteraction() {
-  if (!playing) {
+  if (bgm?.paused) {
     playMusic();
   }
 
   document.removeEventListener("click", firstInteraction);
-
   document.removeEventListener("touchstart", firstInteraction);
 }
 
 document.addEventListener("click", firstInteraction);
-
 document.addEventListener("touchstart", firstInteraction);
 
 /* ==========================================================
