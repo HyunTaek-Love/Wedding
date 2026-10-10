@@ -1,0 +1,73 @@
+/* 작은 음악 파형 버튼 */
+#musicButton {
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  padding: 0 !important;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 기존 아이콘 및 가상 요소 숨김 */
+#musicButton::before,
+#musicButton::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* 음악 파형 */
+#musicButton .music-wave {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  height: 15px;
+}
+
+#musicButton .music-wave span {
+  display: block;
+  width: 2px;
+  height: 5px;
+  border-radius: 2px;
+  background: currentColor;
+  opacity: 0.85;
+}
+
+/* 재생 중에만 파형 애니메이션 */
+#musicButton.is-playing .music-wave span {
+  animation: musicWave 0.7s ease-in-out infinite alternate;
+}
+
+#musicButton.is-playing .music-wave span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+#musicButton.is-playing .music-wave span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+#musicButton.is-playing .music-wave span:nth-child(4) {
+  animation-delay: 0.1s;
+}
+
+#musicButton.is-playing .music-wave span:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+@keyframes musicWave {
+  from {
+    transform: scaleY(0.45);
+  }
+  to {
+    transform: scaleY(1.7);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #musicButton .music-wave span {
+    animation: none !important;
+  }
+}
