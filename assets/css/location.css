@@ -128,3 +128,101 @@
     font-size: 24px;
   }
 }
+
+/* ==========================================================
+   LOCATION: 교통 안내 구분선
+========================================================== */
+
+.location__info {
+  gap: 0;
+}
+
+.location__item {
+  padding: 20px 0;
+}
+
+/* 지하철·버스·주차 사이에 얇은 구분선 */
+.location__item + .location__item {
+  border-top: 1px solid #e8e4e5;
+}
+
+/* 첫 번째 항목은 위쪽 여백만 정리 */
+.location__item:first-child {
+  padding-top: 0;
+}
+
+/* 마지막 항목 아래쪽 여백 정리 */
+.location__item:last-child {
+  padding-bottom: 0;
+}
+
+/* 약도 이미지 */
+.location__map-image {
+  width: 100%;
+  margin: 20px 0;
+  border: 1px solid #eee5e8;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.location__map-open {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.location__map-open img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.location__map-hint {
+  display: block;
+  padding: 10px;
+  color: #8b777e;
+  background: #fffafb;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* 약도 확대 모달 */
+.location__map-modal[hidden] {
+  display: none !important;
+}
+
+.location__map-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.88);
+}
+
+.location__map-modal > img {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+.location__map-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+}

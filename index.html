@@ -490,12 +490,47 @@
 
         <div class="location__card fade-up delay-3">
           <div class="location__map">
-            <iframe
-              title="Wedding Hall Map"
-              loading="lazy"
-              src="https://maps.google.com/maps?q=인천삼산컨벤션센터&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            <!-- 예식장 약도 -->
+            <div class="location__map-image">
+              <button
+                type="button"
+                class="location__map-open"
+                id="openSamsanMap"
+                aria-label="약도 크게 보기"
+              >
+                <img
+                  src="images/samsan_map.jpg"
+                  alt="인천삼산월드컨벤션센터 약도"
+                  loading="lazy"
+                />
+                <span class="location__map-hint"
+                  >약도를 누르면 크게 볼 수 있습니다</span
+                >
+              </button>
+            </div>
+
+            <!-- 약도 확대 화면 -->
+            <div
+              class="location__map-modal"
+              id="samsanMapModal"
+              role="dialog"
+              aria-modal="true"
+              aria-label="약도 크게 보기"
+              hidden
             >
-            </iframe>
+              <button
+                type="button"
+                class="location__map-close"
+                id="closeSamsanMap"
+                aria-label="약도 닫기"
+              >
+                ×
+              </button>
+              <img
+                src="images/samsan_map.jpeg"
+                alt="인천삼산월드컨벤션센터 약도 확대 이미지"
+              />
+            </div>
           </div>
 
           <div class="location__content">
@@ -786,5 +821,36 @@
 
       <span> © 2027 Wedding Invitation </span>
     </footer>
+
+    <script>
+      (() => {
+        const modal = document.getElementById("samsanMapModal");
+        const openButton = document.getElementById("openSamsanMap");
+        const closeButton = document.getElementById("closeSamsanMap");
+
+        if (!modal || !openButton || !closeButton) return;
+
+        function openMap() {
+          modal.hidden = false;
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeMap() {
+          modal.hidden = true;
+          document.body.style.overflow = "";
+        }
+
+        openButton.addEventListener("click", openMap);
+        closeButton.addEventListener("click", closeMap);
+
+        modal.addEventListener("click", (event) => {
+          if (event.target === modal) closeMap();
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !modal.hidden) closeMap();
+        });
+      })();
+    </script>
   </body>
 </html>
