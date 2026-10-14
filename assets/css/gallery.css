@@ -202,3 +202,12 @@
     height: 68px;
   }
 }
+
+/* 사진 영역에서 확대 동작이 감지되면 흐림 처리 */
+#gallery .gallery__slide img {
+  transition: filter 0.15s ease;
+}
+
+#gallery.photo-zoom-blurred .gallery__slide img {
+  filter: blur(12px);
+}
