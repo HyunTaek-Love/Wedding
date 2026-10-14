@@ -114,3 +114,22 @@ html.kakao-browser .hero__dday {
     font-size: clamp(30px, 7vw, 40px);
   }
 }
+
+/* ==========================================================
+   KAKAO MOBILE: 주소창 변화에 따른 첫 화면 사진 확대 방지
+========================================================== */
+
+@media (max-width: 767px) {
+  html.kakao-browser .hero {
+    height: 100svh !important;
+    min-height: 100svh !important;
+  }
+
+  html.kakao-browser .hero__background {
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+    background-size: cover;
+    background-position: center center;
+  }
+}
